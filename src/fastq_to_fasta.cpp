@@ -31,7 +31,7 @@ int main (int argc, char* argv[])
         cerr << "Error: " << e.error() << " " << e.argId() << endl;
     }
 
-    ifstream input(input_file_path.c_str(), ios::out | ios::trunc);
+    ifstream input(input_file_path.c_str());
     if (!input.is_open())
     {
         cerr << "Error, couldn't open input file: " << input_file_path << endl;
