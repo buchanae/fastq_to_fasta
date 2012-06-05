@@ -46,22 +46,13 @@ int main (int argc, char* argv[])
     }
 
     string line;
-    bool ignore = false;
 
-    while (std::getline(input, line).good())
+    while (getline(input, line).good())
     {
-        if (line.at(0) == '@')
-        {
-            ignore = false;
-            output << "<" << line.substr(1) << endl;
-        }
-        else if (line.at(0) == '+')
-        {
-            ignore = true;
-        }
-        else if (!ignore)
-        {
-            output << line << endl;
-        }
+        output << ">" << line.substr(1) << endl;
+        getline(input, line);
+        output << line << endl;
+        getline(input, line);
+        getline(input, line);
     }
 }
